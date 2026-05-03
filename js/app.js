@@ -381,7 +381,7 @@ cardapio.metodos = {
 
             if(validacep.test(cep)){
 
-                $.getJSON("http://viacep.com.br/ws/" + cep + "/json/?callback=?", function(dados){
+                $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function(dados){
 
                     if(!("erro" in dados)){
                         
