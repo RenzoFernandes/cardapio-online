@@ -9,6 +9,7 @@
 }
 
 :root{
+    --layout-scale: 0.8;
     --color-background: #fffdf7;
     --color-black: #212121;
     --color-black-heavy: #000;
@@ -26,6 +27,32 @@ html, body{
     font-family: 'PopinsRegular', 'Rubik', 'sans-serif';
     background-color: var(--color-background);
     color: var(--color-text);
+}
+
+@media (min-width: 992px){
+    body{
+        zoom: var(--layout-scale);
+    }
+
+    .container{
+        max-width: 912px;
+    }
+}
+
+@media (min-width: 1200px){
+    .container{
+        max-width: 1080px;
+    }
+}
+
+@supports not (zoom: 1){
+    @media (min-width: 992px){
+        body{
+            transform: scale(var(--layout-scale));
+            transform-origin: top center;
+            width: calc(100% / var(--layout-scale));
+        }
+    }
 }
 
 b {
@@ -128,6 +155,24 @@ a.navbar-brand{
     border-radius: 15px;
     text-align: center;
     padding-top: 8px;
+}
+
+#btnLigar{
+    display: inline-flex;
+    align-items: center;
+}
+
+#btnLigar span.icon-left{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 0;
+    flex: 0 0 45px;
+}
+
+#btnLigar span.icon-left i{
+    line-height: 1;
 }
 
 .btn-sm{
@@ -428,6 +473,10 @@ a.navbar-brand{
     padding-bottom: 150px;
 }
 
+.reservas .wow{
+    visibility: visible!important;
+}
+
 .card-secundary{
     background-color: var(--color-secundary);
     border-radius: 70px;
@@ -450,6 +499,13 @@ a.navbar-brand{
 
 footer{
     background-color: var(--color-secundary);
+    padding: 22px 0;
+    position: relative;
+    z-index: 1;
+}
+
+footer .wow{
+    visibility: visible!important;
 }
 
 .logo-footer{

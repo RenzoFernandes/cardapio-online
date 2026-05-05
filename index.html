@@ -6,7 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>Restaurante - Seja bem-vindo!</title>
+        <title>Menu On-line</title>
+        <link rel="icon" type="image/png" href="./img/logo.png" />
+        <link rel="apple-touch-icon" href="./img/logo.png" />
         
         <link rel="stylesheet" href="./css/bootstrap.min.css"/>
         <link rel="stylesheet" href="./css/fontawesome.css"/>
@@ -17,6 +19,7 @@
 
     </head>
 
+    
     <body>
 
         <div class="container-mensagens" id="container-mensagens">
@@ -208,6 +211,9 @@
                     <div class="col-12 col-one text-center wow fadeInUp">                          
                         <a id="btnVerMais" class="btn btn-white btn-sm" onclick="cardapio.metodos.verMais()"> 
                             Ver mais
+                        </a>
+                        <a id="btnVerMenos" class="btn btn-white btn-sm hidden" onclick="cardapio.metodos.verMenos()"> 
+                            Ver menos
                         </a>
                     </div>
 

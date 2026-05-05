@@ -38,7 +38,14 @@ cardapio.metodos = {
 
         if(!vermais){
             $("#itensCardapio").html('');
-            $("#btnVerMais").removeClass('hidden');
+            $("#btnVerMenos").addClass('hidden');
+
+            if(filtro.length > 8){
+                $("#btnVerMais").removeClass('hidden');
+            }
+            else{
+                $("#btnVerMais").addClass('hidden');
+            }
         }
 
         $.each(filtro, (i, e) =>{
@@ -49,8 +56,8 @@ cardapio.metodos = {
             .replace(/\${id}/g, e.id)
 
 
-            // botão ver mais foi clicado (12 itens)
-            if(vermais && i >= 8 && i <12){
+            // botão ver mais foi clicado (todos os itens restantes)
+            if(vermais && i >= 8){
                 $("#itensCardapio").append(temp)
             }
 
@@ -76,6 +83,13 @@ cardapio.metodos = {
         cardapio.metodos.obterItensCardapio(ativo, true);
 
         $("#btnVerMais").addClass('hidden');
+        $("#btnVerMenos").removeClass('hidden');
+    },
+
+    verMenos: () => {
+
+        var ativo = $(".container-menu a.active").attr('id').split('menu-')[1];
+        cardapio.metodos.obterItensCardapio(ativo);
     },
 
     // diminuir a quantidade do item no cardápio
